@@ -18,4 +18,11 @@ poetry version <add_package_version>
 poetry publish --build
 
 pip install --upgrade dunzo
+
+```
+
+adding packages 
+
+```shell
+poetry add --dev <your package>
 ```
