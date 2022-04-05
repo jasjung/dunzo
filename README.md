@@ -2,6 +2,17 @@
 
 https://pypi.org/project/dunzo/
 
+## Installation
+
+```shell  
+pip install dunzo
+```
+
+## Upgrade 
+
+```shell 
+pip install --upgrade dunzo
+```
 
 ## [sounds effect](https://mixkit.co/free-sound-effects/) 
 
@@ -48,9 +59,6 @@ done # should output something like below:
 # update your version 
 poetry version <add_package_version> 
 poetry publish --build
-
-pip install --upgrade dunzo
-
 ```
 
 adding packages 
