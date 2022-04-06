@@ -2,6 +2,9 @@
 
 https://pypi.org/project/dunzo/
 
+[`dunzo`](https://www.urbandictionary.com/define.php?term=dunzo): a slang word for done/finshed. 
+
+
 ## Installation
 
 ```shell  
