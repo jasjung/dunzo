@@ -14,12 +14,6 @@ pip install dunzo
 pip install --upgrade dunzo
 ```
 
-## [sounds effect](https://mixkit.co/free-sound-effects/) 
-
-- (Original name : name in this repo)  
-- Uplifting flute notification : flute 
-- Retro game notification : game  
-
 ## Usage 
 
 In Python 
@@ -27,12 +21,16 @@ In Python
 ```py 
 from dunzo import done 
 done()
+# or 
+done(sound="dog")
 ```
 
 In Terminal:  
 
 ```sh 
 done
+# or 
+done dog 
 ```
 
 However, to make the above work you have to follow a few steps. If you know how to bypass this, please tell me.  
@@ -62,9 +60,14 @@ poetry version <add_package_version>
 poetry publish --build
 ```
 
-adding packages 
+Adding development packages 
 
 ```shell
 poetry add --dev <your package>
 ```
 
+## List of available [sounds effect](https://mixkit.co/free-sound-effects/) 
+ 
+- Uplifting flute notification: `flute` 
+- Retro game notification: `game`
+- Dog barking twice: `dog`  
