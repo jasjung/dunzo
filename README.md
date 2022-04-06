@@ -45,12 +45,13 @@ which python # it would look like the following
 # If so, your done command will live here: '/Users/<your_user_name>/opt/anaconda3/bin/done'
 # You want to add it in your zshrc or bash_profile to setup an alias.  
 open .zshrc # or equivalent 
+# add the following line to .zshrc to create an alias   
 alias done='/Users/<your_user_name>/opt/anaconda3/bin/done'
+# restart terminal or source it 
 source .zshrc
-
+# run the command 
 done # should output something like below:   
 #$ Finished @ (Date) 2022-04-04 (Time) 06:18:59 PM PDT! Played flute sound
- 
 ```
 
 ## Development 
