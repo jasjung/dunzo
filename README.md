@@ -1,9 +1,16 @@
-# Dunzo
+# Dunzo: sound alert for scripts  
 
-https://pypi.org/project/dunzo/
 
-[`dunzo`](https://www.urbandictionary.com/define.php?term=dunzo): a slang word for done/finshed. 
+| Terminal Demo      | Jupyter Notebook Demo |
+| ----------- | ----------- |
+| ![](docs/demo_terminal.gif)| ![](docs/demo_jupyter.gif)       |
 
+
+## What is it? 
+
+[Dunzo](https://www.urbandictionary.com/define.php?term=dunzo) is "a slang word for done/finished". 
+`dunzo` is a simple tool that plays sound. You can use a default sound that comes with the package or provide your own.
+It is useful to be alerted when your machine learning model finishes training or when your pipeline finishes running. 
 
 ## Installation
 
