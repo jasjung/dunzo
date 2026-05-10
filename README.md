@@ -1,9 +1,13 @@
 # Dunzo
 
-Tiny completion sounds for Python scripts and the command line.
-
-Dunzo is useful when a training job, notebook cell, shell command, or long-running script
+* Tiny completion sounds for Python scripts and the command line.
+* [Dunzo](https://www.urbandictionary.com/define.php?term=dunzo) is "a slang word for done/finished". 
+* Dunzo is useful when a training job, notebook cell, shell command, or long-running script
 finishes and you want a simple notifcation sound.
+
+| Terminal Demo      | Jupyter Notebook Demo |
+| ----------- | ----------- |
+| ![](docs/demo_terminal.gif)| ![](docs/demo_jupyter.gif)       |
 
 ## Install
 
