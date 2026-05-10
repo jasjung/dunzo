@@ -1,4 +1,5 @@
 import importlib
+from importlib.metadata import entry_points
 from importlib.resources import as_file, files
 from pathlib import Path
 from types import SimpleNamespace
@@ -17,6 +18,19 @@ from dunzo.done import (
 
 def test_version():
     assert __version__ == "0.2.0"
+
+
+def test_console_scripts_include_done_alias():
+    scripts = {
+        entry_point.name: entry_point.value
+        for entry_point in entry_points(group="console_scripts")
+        if entry_point.value == "dunzo.cli:main"
+    }
+
+    assert scripts == {
+        "done": "dunzo.cli:main",
+        "dunzo": "dunzo.cli:main",
+    }
 
 
 def test_available_sounds():

@@ -59,7 +59,7 @@ python -m pip install --upgrade pip
 python -m pip install dist/dunzo-0.2.1-py3-none-any.whl
 dunzo --list-sounds
 dunzo
-done positive
+command done positive
 python -c "from dunzo import done; print(done('chime'))"
 deactivate
 ```
@@ -74,7 +74,7 @@ python -m pip install /path/to/dunzo-0.2.1-py3-none-any.whl
 dunzo --list-sounds
 dunzo
 dunzo positive
-done trumpet
+command done trumpet
 python -c "from dunzo import done; print(done('success'))"
 deactivate
 ```
@@ -119,8 +119,9 @@ Commit and tag the release if everything looks good:
 ```sh
 git status --short
 git add pyproject.toml CHANGELOG.md uv.lock
-git commit -m "Release 0.2.1"
-git tag v0.2.1
+git commit -m "Release 0.2.0"
+git tag v0.2.0
+git push origin v0.2.0
 ```
 
 Push only when ready:

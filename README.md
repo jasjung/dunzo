@@ -38,9 +38,8 @@ done("/path/to/your/sound.mp3")
 ## Use From The Command Line
 
 ```sh
-# both work and are same 
+# bare command
 dunzo
-done 
 
 # run specific sounds 
 dunzo success
@@ -51,6 +50,16 @@ dunzo /path/to/your/sound.mp3
 
 # Built-in sounds:
 dunzo --list-sounds
+```
+
+The package also installs a `done` console script, but `done` is a reserved word in
+common shells like zsh and bash. Use `dunzo` as the normal terminal command, or run
+the alias through another command:
+
+```sh
+uv run done
+command done positive
+\done trumpet
 ```
 
 Dunzo uses local system audio players when available. If none are available, built-in sounds fall back to the terminal bell.The default sound is `success`.
