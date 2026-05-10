@@ -1,6 +1,6 @@
 [project]
 name = "dunzo"
-version = "0.2.0"
+version = "0.2.1"
 description = "Tiny completion sounds for Python scripts and the command line."
 readme = "README.md"
 requires-python = ">=3.9"
