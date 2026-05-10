@@ -1,83 +1,75 @@
-# Dunzo: sound alert for scripts  
+# Dunzo
 
+Tiny completion sounds for Python scripts and the command line.
 
-| Terminal Demo      | Jupyter Notebook Demo |
-| ----------- | ----------- |
-| ![](docs/demo_terminal.gif)| ![](docs/demo_jupyter.gif)       |
+Dunzo is useful when a training job, notebook cell, shell command, or long-running script
+finishes and you want a simple notifcation sound.
 
+## Install
 
-## What is it? 
-
-[Dunzo](https://www.urbandictionary.com/define.php?term=dunzo) is "a slang word for done/finished". 
-`dunzo` is a simple tool that plays sound. You can use a default sound that comes with the package or provide your own.
-It is useful to be alerted when your machine learning model finishes training or when your pipeline finishes running. 
-
-## Installation
-
-```shell  
+```sh
 pip install dunzo
 ```
 
-## Upgrade 
-
-```shell 
-pip install --upgrade dunzo
-```
-
-## Usage 
-
-In Python 
-
-```py 
-from dunzo import done 
-done()
-# or 
-done(sound="dog")
-```
-
-In Terminal:  
-
-```sh 
-done
-# or 
-done dog 
-```
-
-However, to make the above work you have to follow a few steps. If you know how to bypass this, please tell me.  
-
-```shell
-# find your python path  
-which python # it would look like the following 
-#$ /Users/<your_user_name>/opt/anaconda3/bin/python
-
-# If so, your done command will live here: '/Users/<your_user_name>/opt/anaconda3/bin/done'
-# You want to add it in your zshrc or bash_profile to setup an alias.  
-open .zshrc # or equivalent 
-# add the following line to .zshrc to create an alias   
-alias done='/Users/<your_user_name>/opt/anaconda3/bin/done'
-# restart terminal or source it 
-source .zshrc
-# run the command 
-done # should output something like below:   
-#$ Finished @ (Date) 2022-04-04 (Time) 06:18:59 PM PDT! Played flute sound
-```
-
-## Development 
+For local development with UV:
 
 ```sh
-# update your version 
-poetry version <add_package_version> 
-poetry publish --build
+uv sync
+uv run pytest
+uv run dunzo --list-sounds
 ```
 
-Adding development packages 
+## Use In Python
 
-```shell
-poetry add --dev <your package>
+```py
+# done or dunzo are identical, you can choose one. 
+from dunzo import done, dunzo
+
+done()
+dunzo()
+# for specific sounds 
+done("success")
+done("positive")
+done("trumpet")
+done("chime")
+done("/path/to/your/sound.mp3")
 ```
 
-## List of available [sounds effect](https://mixkit.co/free-sound-effects/) 
- 
-- Uplifting flute notification: `flute` 
-- Retro game notification: `game`
-- Dog barking twice: `dog`  
+## Use From The Command Line
+
+```sh
+# both work and are same 
+dunzo
+done 
+
+# run specific sounds 
+dunzo success
+dunzo positive
+dunzo trumpet
+dunzo chime
+dunzo /path/to/your/sound.mp3
+
+# Built-in sounds:
+dunzo --list-sounds
+```
+
+Dunzo uses local system audio players when available. If none are available, built-in sounds fall back to the terminal bell.The default sound is `success`.
+
+## Sound Licensing
+
+Dunzo bundles a few short notification sounds from Pixabay under the Pixabay Content License. Attribution is not required by Pixabay, but the source URLs and license notes are documented in `MAINTAINING.md`.
+
+The `chime` sound is generated locally at runtime from simple waveforms and does not use a
+bundled audio asset.
+
+You can still pass a local audio file path if you want your own sound. Make sure you have the right to use that file in your environment or project.
+
+## Development
+
+```sh
+uv sync
+uv run ruff check .
+uv run ruff format --check .
+uv run pytest
+uv build
+```
